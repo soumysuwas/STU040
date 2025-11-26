@@ -27,15 +27,16 @@ Used two complementary methods to identify authenticity indicators:
 
 **Method B: SHAP Analysis (Game Theory)**
 - Calculated marginal contribution of each word to "Genuine" prediction
-- Top words: `alfie`, `incredible`, `delightful`
-- **FLAG3 (SHAP)**: `FLAG3{218bc662d5}`
+- Top words: `alfie`, `best`, `book`
+- **FLAG3 (SHAP)**: `FLAG3{192a60fa4f}`
+
 
 ## Results
 ```
 FLAG1 = 513e114bd6035045c4570589ec333332f67b75c02480ed8b4dd45ecd4c10eef0
 FLAG2 = FLAG2{9E005560}
 FLAG3_RF = FLAG3{bba683e171}
-FLAG3_SHAP = FLAG3{218bc662d5}
+FLAG3_SHAP = FLAG3{192a60fa4f}
 ```
 
 ## Repository Structure

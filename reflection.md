@@ -11,7 +11,7 @@ My approach to this CTF challenge combined systematic data exploration, careful 
 **Phase 3: ML Analysis** presented the most technical complexity. I employed two distinct approaches to ensure robustness:
 
 1. **Random Forest Feature Importance**: Identified "forward", "incredible", "alfie".
-2. **SHAP Analysis**: Identified "alfie", "incredible", "delightful".
+2. **SHAP Analysis**: Identified "alfie", "best", "book".
 
 Both methods agreed on the core authenticity signals ("alfie", "incredible"), validating the model's learning. SHAP provided a more nuanced view of marginal contributions, while Feature Importance highlighted tree-split utility. I included both results to demonstrate a comprehensive understanding of model interpretability. A critical insight in both cases was excluding the injected hash itself from potential authenticity indicators.
 

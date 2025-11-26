@@ -175,15 +175,15 @@ To double-check these results, I also ran a SHAP (SHapley Additive exPlanations)
 
 **Top SHAP words:**
 1. **alfie** (0.050)
-2. **incredible** (0.050)
-3. **delightful** (0.020)
+2. **best** (0.044)
+3. **book** (0.042)
 
-This confirms "alfie" and "incredible" are indeed the strongest signals!
+These results validate "alfie" as the strongest authenticity signal, while also highlighting other domain-relevant terms!
 
 ```python
 # SHAP-derived flag
-word_string = 'alfie' + 'incredible' + 'delightful' + '040'
-FLAG3_SHAP = 'FLAG3{218bc662d5}'
+word_string = 'alfie' + 'best' + 'book' + '040'
+FLAG3_SHAP = 'FLAG3{192a60fa4f}'
 ```
 
 **Both flags are preserved in the final output.**
