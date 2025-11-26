@@ -1,0 +1,28 @@
+# Data files
+Files/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+.venv
+ctf_stu040/
+
+# Temporary files
+*.pkl
+*_progress.txt
+output.txt
+*.bat
+*.ps1
+
+# Debug/exploration scripts
+explore.py
+debug_match.py
+get_flags.py
+compute_flag3.py
+compute_flag3_part1.py
+flags_found.txt
