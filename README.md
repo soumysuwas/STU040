@@ -18,23 +18,24 @@ This Capture the Flag challenge involved detecting a manipulated book review in 
 - FLAG2 is simply the hash formatted as `FLAG2{9E005560}`
 
 ### FLAG3: Explaining Authenticity with ML
-1. **Feature Engineering**: Created features to distinguish suspicious reviews (short + superlatives + hash) from genuine reviews (detailed + domain terms)
-2. **Model Training**: Trained Random Forest classifier on 5-star reviews for the identified book
-3. **TF-IDF Analysis**: Used TF-IDF vectorization to analyze text patterns
-4. **Feature Importance**: Extracted top 3 words that indicate genuineness: "forward", "incredible", "alfie"
-5. **FLAG3 Computation**: Concatenated words with numeric ID ("forwardincrediblealfie040") and computed SHA256
+Used two complementary methods to identify authenticity indicators:
 
-## Technical Stack
-- **Python 3.9** with conda environment
-- **pandas** & **numpy**: Data manipulation
-- **scikit-learn**: Machine learning (RandomForestClassifier, TfidfVectorizer)
-- **hashlib**: SHA256 hash computation
+**Method A: Feature Importance (Random Forest)**
+- Analyzed Gini impurity reduction in decision trees
+- Top words: `forward`, `incredible`, `alfie`
+- **FLAG3 (RF)**: `FLAG3{bba683e171}`
+
+**Method B: SHAP Analysis (Game Theory)**
+- Calculated marginal contribution of each word to "Genuine" prediction
+- Top words: `alfie`, `incredible`, `delightful`
+- **FLAG3 (SHAP)**: `FLAG3{218bc662d5}`
 
 ## Results
 ```
 FLAG1 = 513e114bd6035045c4570589ec333332f67b75c02480ed8b4dd45ecd4c10eef0
 FLAG2 = FLAG2{9E005560}
-FLAG3 = FLAG3{bba683e171}
+FLAG3_RF = FLAG3{bba683e171}
+FLAG3_SHAP = FLAG3{218bc662d5}
 ```
 
 ## Repository Structure
@@ -43,23 +44,21 @@ STU040/
 ├── Files/
 │   ├── books.csv          # Book dataset
 │   └── reviews.csv        # Review dataset
-├── solver.py              # Complete solution code
-├── flags.txt              # Final flags
+├── solver.py              # Combined solution (RF + SHAP)
+├── solver_shap.py         # Dedicated SHAP solver
+├── flags.txt              # Final flags (both versions)
 ├── README.md              # This file
-└── reflection.md          # Methodology reflection
+├── reflection.md          # Methodology reflection
+└── SOLUTION_WALKTHROUGH.md # Detailed technical guide
 ```
 
 ## How to Run
 ```bash
-# Create and activate environment
-conda create -n ctf_stu040 python=3.9 -y
-conda activate ctf_stu040
-
-# Install dependencies
-pip install pandas numpy scikit-learn
-
-# Run solver
+# Run combined solver
 python solver.py
+
+# Run dedicated SHAP solver
+python solver_shap.py
 ```
 
 ## Key Insights

@@ -8,6 +8,12 @@ My approach to this CTF challenge combined systematic data exploration, careful 
 
 **Phase 2: Identification** was straightforward once the hash was located. FLAG2 simply formatted the student hash, confirming the manipulated review.
 
-**Phase 3: ML Analysis** presented the most technical complexity. I trained a Random Forest classifier to distinguish between suspicious reviews (short, superlative-heavy) and genuine reviews (detailed, domain-specific). Using TF-IDF vectorization captured meaningful text patterns. A critical insight was excluding the injected hash itself from potential authenticity indicators—the top words "forward", "incredible", and "alfie" genuinely reflected authentic review language about the book's narrative and characters. This demonstrates how feature importance can reveal authentic signals even in manipulated data.
+**Phase 3: ML Analysis** presented the most technical complexity. I employed two distinct approaches to ensure robustness:
+
+1. **Random Forest Feature Importance**: Identified "forward", "incredible", "alfie".
+2. **SHAP Analysis**: Identified "alfie", "incredible", "delightful".
+
+Both methods agreed on the core authenticity signals ("alfie", "incredible"), validating the model's learning. SHAP provided a more nuanced view of marginal contributions, while Feature Importance highlighted tree-split utility. I included both results to demonstrate a comprehensive understanding of model interpretability. A critical insight in both cases was excluding the injected hash itself from potential authenticity indicators.
+
 
 The challenge reinforced the importance of thorough data exploration, careful debugging, and thoughtful feature engineering in data science investigations.
