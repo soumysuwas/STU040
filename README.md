@@ -39,7 +39,7 @@ FLAG3 = FLAG3{bba683e171}
 
 ## Repository Structure
 ```
-E:\Antigravity\GrowthAXL/
+STU040/
 ├── Files/
 │   ├── books.csv          # Book dataset
 │   └── reviews.csv        # Review dataset
